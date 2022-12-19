@@ -14,14 +14,27 @@ export default {
       title: 'Description'
     },
     {
+      name: 'gratuit',
+      type: 'string',
+      title: 'Gratuit',
+      options: {
+        list: [
+          { title: 'Oui', value: 'Oui' },
+          { title: 'Non', value: 'Non' },
+        ],
+      },
+    },
+    {
       name: 'priceCode',
       type: 'string',
-      title: 'Price Code'
+      title: 'Price Code',
+      hidden: ({ parent }) => parent?.gratuit === 'Oui'
     },
     {
       name: 'prix',
       type: 'number',
-      title: 'Prix'
+      title: 'Prix',
+      hidden: ({ parent }) => parent?.gratuit === 'Oui'
     },
     {
       name: 'image',
