@@ -5,10 +5,10 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'YogaVedaSanteAdministration',
+  title:import.meta.env.SANITY_STUDIO_TITLE,
 
-  projectId: 'u2dh2hgt',
-  dataset: 'production',
+  projectId: import.meta.env.SANITY_STUDIO_PROJECTID,
+  dataset: import.meta.env.SANITY_STUDIO_DATASET,
 
   plugins: [deskTool(), visionTool()],
 
